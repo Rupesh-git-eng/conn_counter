@@ -12,5 +12,5 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         conn, addr = s.accept()
         with conn:
             count += 1
-            print(f"[+] Connection #{count} from {addr}")
+            print(f"[INFO] Connection #{count} from {addr}",flush=True)
             conn.sendall(f"Connection count: {count}\n".encode())
