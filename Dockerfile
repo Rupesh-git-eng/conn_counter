@@ -1,4 +1,4 @@
-FROM registry.access.redhat.com/ubi9/ubi
+FROM registry.redhat.io/rhel9/python-312
 
 WORKDIR /app
 COPY app.py /app/
