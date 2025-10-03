@@ -20,11 +20,13 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         conn, addr = s.accept()
         with conn:
             count += 1
-            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-            #print(f"[+] Connection #{count} from {addr}")
-            print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S") # get the time
+            server_ip = conn.getsockname()[0]  # gets the server's own IP
             
-            body = f"Hello, World!\n"
+            print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
+       
+            # Print Hello world with local ip
+            body = f"Hello, World! 👋\nYou have hit pod ip : {server_ip}\nspace\n"
             response = (
                 "HTTP/1.1 200 OK\r\n" 
                 "Content-Type: text/plain\r\n"
@@ -34,17 +36,3 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 f"{body}"
             )
             conn.sendall(response.encode())
-
-#with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-#    s.bind((HOST, PORT))
-#    s.listen()
-#    print(f"[*] Listening on {HOST}:{PORT}")
-#    while True:
-#        conn, addr = s.accept()
-#        with conn:
-#            count += 1
-#            ## Time 
-#            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-#            ## Time 
-#            print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
-#            conn.sendall(f"Connection count: {count}\n".encode())
