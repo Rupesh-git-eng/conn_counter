@@ -26,7 +26,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
        
             # Print Hello world with local ip
-            body = f"Hello, World! 👋\nYou have hit pod ip : {server_ip}\nspace\n"
+            body = f"Hello, World! 👋\nYou have hit pod ip : {server_ip}\nip\n"
             response = (
                 "HTTP/1.1 200 OK\r\n" 
                 "Content-Type: text/plain\r\n"
