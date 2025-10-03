@@ -20,6 +20,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         conn, addr = s.accept()
         with conn:
             count += 1
+            now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             #print(f"[+] Connection #{count} from {addr}")
             print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
             
