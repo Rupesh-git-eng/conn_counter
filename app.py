@@ -21,7 +21,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
         with conn:
             count += 1
             #print(f"[+] Connection #{count} from {addr}")
-            print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True 
+            print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
             
             body = f"Hello, World! 👋\nConnection count: {count}\n"
             response = (
