@@ -24,7 +24,7 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
             #print(f"[+] Connection #{count} from {addr}")
             print(f"[{now}] [INFO] Connection #{count} from {addr}",flush=True)
             
-            body = f"Hello, World! 👋\nConnection count: {count}\n"
+            body = f"Hello, World! 👋\n"
             response = (
                 "HTTP/1.1 200 OK\r\n"
                 "Content-Type: text/plain\r\n"
