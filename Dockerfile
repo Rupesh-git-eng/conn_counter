@@ -1,4 +1,4 @@
-FROM registry.redhat.io/rhel9/python-312
+FROM registry.redhat.io/rhel8/python-39:latest
 
 WORKDIR /app
 COPY app.py /app/
