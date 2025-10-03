@@ -5,4 +5,4 @@ COPY app.py /app/
 
 EXPOSE 8080
 
-CMD ["python3.9", "app.py"]
+CMD ["python3", "app.py"]
